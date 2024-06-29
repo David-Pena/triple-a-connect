@@ -1,9 +1,25 @@
 import { Tabs } from "expo-router";
 import React from "react";
-
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { Text, Image, View, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Ionicons } from "@expo/vector-icons";
+
+const CustomHeaderBar = () => (
+  <SafeAreaView className="px-5">
+    <View className="flex-row justify-between items-center">
+      <View className="flex-row gap-3 items-center">
+        <Ionicons name="person-circle-outline" size={40} />
+        <Text className="text-lg font-semibold" style={styles.title}>
+          Welcome back
+        </Text>
+      </View>
+      <Image source={require("../../assets/images/triplea-logo.png")} className="w-24 h-24" />
+    </View>
+  </SafeAreaView>
+);
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -11,7 +27,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveTintColor: Colors.primary,
         headerShown: false,
       }}
       initialRouteName="home"
@@ -31,6 +47,7 @@ export default function TabLayout() {
         name="explore"
         options={{
           title: "Services",
+          header: ({}) => <CustomHeaderBar />,
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? "list" : "list-outline"} color={color} />
           ),
@@ -40,6 +57,8 @@ export default function TabLayout() {
         name="home"
         options={{
           title: "Quick Actions",
+          headerShown: true,
+          header: ({}) => <CustomHeaderBar />,
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? "grid" : "grid-outline"} color={color} />
           ),
@@ -49,6 +68,7 @@ export default function TabLayout() {
         name="account"
         options={{
           title: "My Account",
+          header: ({}) => <CustomHeaderBar />,
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? "person" : "person-outline"} color={color} />
           ),
@@ -57,3 +77,9 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    fontFamily: "SpaceMono",
+  },
+});
