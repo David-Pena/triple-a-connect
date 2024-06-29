@@ -1,6 +1,5 @@
 import ActionItem from "@/components/home/ActionItem";
-import { Ionicons } from "@expo/vector-icons";
-import { StyleSheet, View, Text } from "react-native";
+import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
