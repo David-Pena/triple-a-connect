@@ -1,12 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  Image,
-  Platform,
-  View,
-  Dimensions,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from "react-native";
 import Onboarding from "react-native-onboarding-swiper";
 import LottieView from "lottie-react-native";
 import { useNavigation } from "expo-router";

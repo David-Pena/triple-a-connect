@@ -11,12 +11,11 @@ const CustomHeaderBar = () => (
   <SafeAreaView className="px-5">
     <View className="flex-row justify-between items-center">
       <View className="flex-row gap-3 items-center">
-        <Ionicons name="person-circle-outline" size={40} />
         <Text className="text-lg font-semibold" style={styles.title}>
           Welcome back
         </Text>
       </View>
-      <Image source={require("../../assets/images/triplea-logo.png")} className="w-24 h-24" />
+      <Ionicons name="person-circle-outline" size={40} color={"#F98C20"} />
     </View>
   </SafeAreaView>
 );
