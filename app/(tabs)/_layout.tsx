@@ -20,7 +20,7 @@ const CustomHeaderBar = () => (
 );
 
 const CustomServicesHeaderBar = () => (
-  <SafeAreaView className="px-5 bg-slate-950 h-[200px]">
+  <SafeAreaView className="px-5 bg-slate-950 h-[180px]">
     <View className="flex flex-row justify-between">
       <View className="flex flex-row justify-between gap-2">
         <View className="flex justify-center items-center w-9 h-9 bg-gray-700 border-red-950 border-2 rounded-md">
@@ -45,8 +45,16 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors.primary,
+        tabBarActiveTintColor: "white",
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: Colors.dark.background,
+          padding: 0,
+          borderRadius: 13,
+          marginBottom: 20,
+          marginLeft: 20,
+          marginRight: 20,
+        },
       }}
       initialRouteName="home"
     >
@@ -55,6 +63,7 @@ export default function TabLayout() {
         options={{
           title: "Onboarding",
           href: null,
+          tabBarShowLabel: false,
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? "home" : "home-outline"} color={color} />
           ),
@@ -66,9 +75,10 @@ export default function TabLayout() {
         options={{
           title: "Services",
           headerShown: true,
+          tabBarShowLabel: false,
           header: ({}) => <CustomServicesHeaderBar />,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? "list" : "list-outline"} color={color} />
+            <TabBarIcon name={focused ? "list" : "list-outline"} color={color} size={24} />
           ),
         }}
       />
@@ -77,9 +87,10 @@ export default function TabLayout() {
         options={{
           title: "Quick Actions",
           headerShown: true,
+          tabBarShowLabel: false,
           header: ({}) => <CustomHeaderBar />,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? "grid" : "grid-outline"} color={color} />
+            <TabBarIcon name={focused ? "grid" : "grid-outline"} color={color} size={24} />
           ),
         }}
       />
@@ -87,9 +98,10 @@ export default function TabLayout() {
         name="account"
         options={{
           title: "My Account",
+          tabBarShowLabel: false,
           header: ({}) => <CustomHeaderBar />,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? "person" : "person-outline"} color={color} />
+            <TabBarIcon name={focused ? "person" : "person-outline"} color={color} size={24} />
           ),
         }}
       />

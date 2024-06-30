@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function TabTwoScreen() {
   return (
-    <SafeAreaView className="flex-1 p-5">
+    <SafeAreaView className="flex-1 p-5" style={{ marginTop: -130, zIndex: 9999 }}>
       <View>
         <View className="bg-slate-200 rounded-xl p-10">
           <Text className="text-center text-lg" style={styles.title}>
