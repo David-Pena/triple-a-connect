@@ -6,7 +6,12 @@ export default function TabTwoScreen() {
   return (
     <SafeAreaView className="flex-1 p-5">
       <View>
-        <View className="flex flex-row justify-between items-center">
+        <View className="bg-slate-200 rounded-xl p-10">
+          <Text className="text-center text-lg" style={styles.title}>
+            In Progress
+          </Text>
+        </View>
+        <View className="flex flex-row justify-between items-center mt-5">
           <Text className="text-[16px]" style={styles.title}>
             Top Services
           </Text>
